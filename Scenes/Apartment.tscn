@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6wf2lffkiu17"]
+[gd_scene load_steps=6 format=3 uid="uid://bn13k6edm3svy"]
 
 [ext_resource type="Texture2D" uid="uid://43ddwdisde7j" path="res://Sprites/Backgrounds/Game Jam Bedroom.png" id="1_1mww1"]
+[ext_resource type="PackedScene" uid="uid://bexstbkif6mdh" path="res://Prefabs/go_to_new_scene.tscn" id="4_xxi7q"]
+[ext_resource type="PackedScene" uid="uid://bgcpq0kxhoy0e" path="res://Scenes/Street.tscn" id="5_c73to"]
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="5_hjnt5"]
 [ext_resource type="AudioStream" uid="uid://vtyoeouaskg2" path="res://Music/Calm before the Storm.ogg" id="6_uywhw"]
 
-[node name="Apartment" type="Node2D"]
+[node name="Apartment Intro" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 100)
@@ -24,3 +26,7 @@ position = Vector2(150, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_uywhw")
+
+[node name="go to new scene" parent="." instance=ExtResource("4_xxi7q")]
+position = Vector2(-666, -36)
+scenePath = ExtResource("5_c73to")

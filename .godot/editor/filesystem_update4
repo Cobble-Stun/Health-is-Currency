@@ -1,7 +1,6 @@
-res://Scenes/Apartment.tscn
-res://Scenes/Street.tscn
 res://Scenes/intro.tscn
-res://Scenes/Apartment Intro.tscn
+res://Scripts/Load Scene.gd
 res://Prefabs/player.tscn
-res://Scripts/Enemy.gd
-res://Scripts/Phone.gd
+res://Prefabs/go_to_new_scene.tscn
+res://Prefabs/store.tscn
+res://Scenes/Apartment Intro.tscn

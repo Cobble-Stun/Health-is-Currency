@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgcpq0kxhoy0e"]
+[gd_scene load_steps=15 format=3 uid="uid://bgcpq0kxhoy0e"]
 
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="2_hmyee"]
 [ext_resource type="Texture2D" uid="uid://dortcsi5p7trm" path="res://Sprites/Backgrounds/Street.png" id="2_lo36n"]
@@ -6,25 +6,13 @@
 [ext_resource type="Script" path="res://Scripts/Phone.gd" id="5_eocq7"]
 [ext_resource type="PackedScene" uid="uid://0jnmi4ke1jw" path="res://Prefabs/enemy.tscn" id="5_s6yda"]
 [ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="6_gifji"]
+[ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="7_lathb"]
+[ext_resource type="PackedScene" uid="uid://i8i75f1701em" path="res://Prefabs/store.tscn" id="8_gopav"]
+[ext_resource type="PackedScene" uid="uid://bexstbkif6mdh" path="res://Prefabs/go_to_new_scene.tscn" id="9_mxhy2"]
+[ext_resource type="PackedScene" uid="uid://bn13k6edm3svy" path="res://Scenes/Apartment.tscn" id="10_aeqec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i1cv"]
 size = Vector2(164, 774)
-
-[sub_resource type="Animation" id="Animation_c6fbn"]
-resource_name = "Bring Up"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(964, 2000), Vector2(964, 540)]
-}
 
 [sub_resource type="Animation" id="Animation_s0yxl"]
 resource_name = "Bring Down"
@@ -40,6 +28,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(964, 540), Vector2(964, 1700)]
+}
+
+[sub_resource type="Animation" id="Animation_c6fbn"]
+resource_name = "Bring Up"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(964, 2000), Vector2(964, 540)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eyqp3"]
@@ -62,6 +66,7 @@ autoplay = true
 position = Vector2(-600, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_hmyee")]
+position = Vector2(-2250, 0)
 
 [node name="Test" type="StaticBody2D" parent="."]
 position = Vector2(700, 0)
@@ -84,14 +89,24 @@ libraries = {
 }
 
 [node name="Health" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
-offset_left = -724.812
-offset_top = -1503.76
-offset_right = -684.812
-offset_bottom = -1463.76
-
-[node name="Debt" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
 offset_left = -149.0
 offset_top = -281.0
 offset_right = 120.0
-offset_bottom = -225.0
-text = "Vitality"
+offset_bottom = -200.0
+theme = ExtResource("7_lathb")
+text = "Vitality:"
+
+[node name="Debt" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+offset_left = -141.0
+offset_top = -179.0
+offset_right = 123.0
+offset_bottom = 196.0
+theme = ExtResource("7_lathb")
+text = "Debt: 999999999999999999999999999999999999999999999"
+
+[node name="store" parent="." instance=ExtResource("8_gopav")]
+position = Vector2(-2071, -17)
+
+[node name="go to new scene" parent="." instance=ExtResource("9_mxhy2")]
+position = Vector2(-2795, -42)
+scenePath = ExtResource("10_aeqec")

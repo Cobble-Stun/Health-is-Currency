@@ -1,24 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1689729456
+::res://::1689798530
 ::res://Application/::1689603288
 icon.svg::CompressedTexture2D::3924838118579037446::1689379455::1689601877::1::::<><>::
 Lexend-VariableFont_wght.ttf::FontFile::3401621097447359266::1689568404::1689601877::1::::<><>::
 UI.tres::Theme::7451419923229705499::1689601876::0::1::::<><>::uid://bop1g5c0hfa8i
-::res://Health-is-Currency/::1689609275
 ::res://Music/::1689459084
 Calm before the Storm.ogg::AudioStreamOggVorbis::1514671335296969631::1689438734::1689459023::1::::<><>::
-::res://Prefabs/::1689729568
+::res://Prefabs/::1689797697
 dialogue.tscn::PackedScene::1667901493021947258::1689608244::0::1::::<><>::res://Scripts/Show Text.gd<>uid://defr2d40hwy3d
 enemy.tscn::PackedScene::52179756076971536::1689601505::0::1::::<><>::res://Scripts/Enemy.gd<>uid://cqrugh4s0mtfy
-player.tscn::PackedScene::392259175479702435::1689729568::0::1::::<><>::res://Scripts/Player.gd<>uid://cqrugh4s0mtfy::::res://Sprites/Player/Idle.png<>uid://um7iupkyx6j1::::res://Sprites/Player/MC walk1.png<>uid://dwifel4vjystf::::res://Sprites/Player/MC walk2.png<>uid://6hh8wi8hofk4::::res://Sprites/Player/MC walk3.png<>uid://g2kbao3r4064::::res://Sprites/Player/MC walk4.png
-::res://Scenes/::1689730485
-Apartment Intro.tscn::PackedScene::6028666710019496746::1689729568::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://x07dgs512pd7::::res://Prefabs/dialogue.tscn<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://vtyoeouaskg2::::res://Music/Calm before the Storm.ogg<>uid://bwwiekpcvatvn::::res://Sprites/Satin.png<>res://Scripts/Intro/Satin.gd<>uid://d0tvsnnxu25r4::::res://Sprites/Intro/Apartment Intro.png<>res://Scripts/Intro/ApartmentIntroSpriteFade.gd
-Apartment.tscn::PackedScene::6994464217875538212::1689729568::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://vtyoeouaskg2::::res://Music/Calm before the Storm.ogg
-intro.tscn::PackedScene::8744049212689841386::1689729568::0::1::::<><>::res://Scripts/Intro/Cutscene.gd<>uid://yn0sduos4ma5::::res://Sprites/Intro/Panel 1.png<>uid://c8ivh7gqqo0kw::::res://Sprites/Intro/Panel 2.png<>uid://dytlex7jrgk7g::::res://Sprites/Intro/Panel 4.png<>uid://dfylvy65xiwv7::::res://Sprites/Intro/Panel 5.png<>uid://bvq11gaga6llt::::res://Sprites/Intro/Panel 3.png<>res://Scripts/Intro/Panel 3.gd<>uid://c7yivn1g4tqe0::::res://Sounds/Intro/Paper crinkle.ogg<>uid://b44ujuovfjyiw::::res://Sounds/Intro/Heart rate monitor.ogg<>uid://defr2d40hwy3d::::res://Application/UI.tres
-Phone.gd::GDScript::-1::1689730492::0::1::::<>CanvasLayer<>::
-Street.tscn::PackedScene::2812623158210135926::1689729568::0::1::::<><>::uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://dortcsi5p7trm::::res://Sprites/Backgrounds/Street.png<>uid://vtyoeouaskg2::::res://Music/Calm before the Storm.ogg<>uid://0jnmi4ke1jw::::res://Prefabs/enemy.tscn
-::res://Scripts/::1689729568
-Enemy.gd::GDScript::-1::1689729568::0::1::::<>CharacterBody2D<>::
+go_to_new_scene.tscn::PackedScene::2715783650885386597::1689797697::0::1::::<><>::res://Scripts/Load Scene.gd
+player.tscn::PackedScene::392259175479702435::1689797697::0::1::::<><>::res://Scripts/Player.gd<>uid://cqrugh4s0mtfy::::res://Sprites/Player/Idle.png<>uid://um7iupkyx6j1::::res://Sprites/Player/MC walk1.png<>uid://dwifel4vjystf::::res://Sprites/Player/MC walk2.png<>uid://6hh8wi8hofk4::::res://Sprites/Player/MC walk3.png<>uid://g2kbao3r4064::::res://Sprites/Player/MC walk4.png
+store.tscn::PackedScene::630179680984943044::1689797697::0::1::::<><>::
+::res://Scenes/::1689797697
+Apartment Intro.tscn::PackedScene::6028666710019496746::1689797697::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://x07dgs512pd7::::res://Prefabs/dialogue.tscn<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://vtyoeouaskg2::::res://Music/Calm before the Storm.ogg<>uid://bwwiekpcvatvn::::res://Sprites/Satin.png<>res://Scripts/Intro/Satin.gd<>uid://d0tvsnnxu25r4::::res://Sprites/Intro/Apartment Intro.png<>res://Scripts/Intro/ApartmentIntroSpriteFade.gd
+Apartment.tscn::PackedScene::3354269040886122666::1689781523::0::1::::<><>::uid://43ddwdisde7j
+intro.tscn::PackedScene::8744049212689841386::1689797697::0::1::::<><>::res://Scripts/Intro/Cutscene.gd<>uid://yn0sduos4ma5::::res://Sprites/Intro/Panel 1.png<>uid://c8ivh7gqqo0kw::::res://Sprites/Intro/Panel 2.png<>uid://dytlex7jrgk7g::::res://Sprites/Intro/Panel 4.png<>uid://dfylvy65xiwv7::::res://Sprites/Intro/Panel 5.png<>uid://bvq11gaga6llt::::res://Sprites/Intro/Panel 3.png<>res://Scripts/Intro/Panel 3.gd<>uid://c7yivn1g4tqe0::::res://Sounds/Intro/Paper crinkle.ogg<>uid://b44ujuovfjyiw::::res://Sounds/Intro/Heart rate monitor.ogg<>uid://defr2d40hwy3d::::res://Application/UI.tres
+Street.tscn::PackedScene::2812623158210135926::1689781506::0::1::::<><>::uid://fuaplykj6mmt
+::res://Scripts/::1689797697
+Enemy.gd::GDScript::-1::1689731039::0::1::::<>CharacterBody2D<>::
+Globals.gd::GDScript::-1::1689739501::0::1::::<>Node<>::
+Load Scene.gd::GDScript::-1::1689797697::0::1::::<>Area2D<>::
+Phone.gd::GDScript::-1::1689776307::0::1::::<>CanvasLayer<>::
 Player.gd::GDScript::-1::1689607737::0::1::::<>CharacterBody2D<>::
 Show Text.gd::GDScript::-1::1689606756::0::1::::<>Area2D<>::
 ::res://Scripts/Intro/::1689606964
