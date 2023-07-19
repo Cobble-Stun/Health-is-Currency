@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgcpq0kxhoy0e"]
+[gd_scene load_steps=14 format=3 uid="uid://bgcpq0kxhoy0e"]
 
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="2_hmyee"]
 [ext_resource type="Texture2D" uid="uid://dortcsi5p7trm" path="res://Sprites/Backgrounds/Street.png" id="2_lo36n"]
@@ -6,25 +6,11 @@
 [ext_resource type="Script" path="res://Scripts/Phone.gd" id="5_eocq7"]
 [ext_resource type="PackedScene" uid="uid://0jnmi4ke1jw" path="res://Prefabs/enemy.tscn" id="5_s6yda"]
 [ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="6_gifji"]
+[ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="7_nj1fw"]
+[ext_resource type="Script" path="res://Scripts/Load Scene.gd" id="8_8orns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i1cv"]
 size = Vector2(164, 774)
-
-[sub_resource type="Animation" id="Animation_c6fbn"]
-resource_name = "Bring Up"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(964, 2000), Vector2(964, 540)]
-}
 
 [sub_resource type="Animation" id="Animation_s0yxl"]
 resource_name = "Bring Down"
@@ -42,11 +28,29 @@ tracks/0/keys = {
 "values": [Vector2(964, 540), Vector2(964, 1700)]
 }
 
+[sub_resource type="Animation" id="Animation_c6fbn"]
+resource_name = "Bring Up"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(964, 2000), Vector2(964, 540)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eyqp3"]
 _data = {
 "Bring Down": SubResource("Animation_s0yxl"),
 "Bring Up": SubResource("Animation_c6fbn")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nihbe"]
 
 [node name="Street" type="Node2D"]
 
@@ -84,14 +88,25 @@ libraries = {
 }
 
 [node name="Health" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
-offset_left = -724.812
-offset_top = -1503.76
-offset_right = -684.812
-offset_bottom = -1463.76
+offset_left = -156.0
+offset_top = -293.0
+offset_right = 136.0
+offset_bottom = -176.0
+theme = ExtResource("7_nj1fw")
+text = "Vitality: 100"
 
 [node name="Debt" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
-offset_left = -149.0
-offset_top = -281.0
-offset_right = 120.0
-offset_bottom = -225.0
-text = "Vitality"
+offset_left = -151.0
+offset_top = -192.0
+offset_right = 129.0
+offset_bottom = 191.0
+theme = ExtResource("7_nj1fw")
+text = "Debt: 9999999999"
+
+[node name="LoadScene" type="Area2D" parent="."]
+script = ExtResource("8_8orns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadScene"]
+shape = SubResource("RectangleShape2D_nihbe")
+
+[connection signal="body_entered" from="LoadScene" to="LoadScene" method="_on_body_entered"]

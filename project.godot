@@ -17,6 +17,10 @@ boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://Application/icon.svg"
 
+[autoload]
+
+globals="*res://Scripts/Globals.gd"
+
 [display]
 
 window/size/viewport_width=1920

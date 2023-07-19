@@ -17,12 +17,16 @@ func _process(delta):
 		phoneOverlay.visible = true
 		healthText.visible = true
 		debtText.visible = true
+		healthText.text = str(globals.health)
+		debtText.text = str(globals.debt)
 		animPlayer.play("Bring Up")
 	elif Input.is_action_just_pressed("Phone") and phoneUp:
 		phoneUp = false
 		phoneOverlay.visible = true
 		healthText.visible = true
 		debtText.visible = true
+		healthText.text = str(globals.health)
+		debtText.text = str(globals.debt)
 		animPlayer.play("Bring Down")
 		
 		
