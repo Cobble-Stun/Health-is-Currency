@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr5li3pxq02kc"]
+[gd_scene load_steps=16 format=3 uid="uid://cr5li3pxq02kc"]
 
 [ext_resource type="Texture2D" uid="uid://43ddwdisde7j" path="res://Sprites/Backgrounds/Game Jam Bedroom.png" id="1_302dv"]
 [ext_resource type="PackedScene" uid="uid://x07dgs512pd7" path="res://Prefabs/dialogue.tscn" id="2_nehug"]
@@ -7,7 +7,49 @@
 [ext_resource type="Texture2D" uid="uid://bwwiekpcvatvn" path="res://Sprites/Satin.png" id="5_if8so"]
 [ext_resource type="Script" path="res://Scripts/Intro/Satin.gd" id="6_0a0g6"]
 [ext_resource type="Texture2D" uid="uid://d0tvsnnxu25r4" path="res://Sprites/Intro/Apartment Intro.png" id="7_3eau3"]
+[ext_resource type="Script" path="res://Scripts/Phone.gd" id="7_c1hlg"]
+[ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="8_dtsfq"]
 [ext_resource type="Script" path="res://Scripts/Intro/ApartmentIntroSpriteFade.gd" id="8_t3wqm"]
+[ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="9_vitdj"]
+[ext_resource type="AudioStream" uid="uid://tjh73ek5b8y2" path="res://Sounds/Satanic laugh.ogg" id="12_rl4gw"]
+
+[sub_resource type="Animation" id="Animation_s0yxl"]
+resource_name = "Bring Down"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(964, 540), Vector2(964, 1700)]
+}
+
+[sub_resource type="Animation" id="Animation_c6fbn"]
+resource_name = "Bring Up"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(964, 2000), Vector2(964, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eyqp3"]
+_data = {
+"Bring Down": SubResource("Animation_s0yxl"),
+"Bring Up": SubResource("Animation_c6fbn")
+}
 
 [node name="Apartment Intro" type="Node2D"]
 
@@ -26,7 +68,10 @@ texture = ExtResource("1_302dv")
 
 [node name="Dialogue" parent="." instance=ExtResource("2_nehug")]
 position = Vector2(-590, -99)
-dialogueArray = ["Hey human, can you hear me? (Press enter to progress dialogue)", "Yeah that hospital bill sucks. How will you pay it off?", "Also that snake poison is gonna kill you any day now, so I've given you a choice.", "Die, or bring me souls.", "Either parts of your soul, or the souls of others", "I don't care how you get them. Now, go."]
+dialogueArray = ["Hey human, can you hear me? (Press enter to progress dialogue)", "Yeah that hospital bill sucks. How will you pay it off?", "Also that snake poison is gonna kill you any day now, so I've given you a choice.", "Die, or bring me souls.", "Either parts of your soul, or the souls of others.", "Oh and you can check your stats on your phone with TAB.", "Yes, I am a software developer.", "Now shoo, go fetch those souls."]
+
+[node name="CollisionShape2D" parent="Dialogue" index="0"]
+position = Vector2(39.25, 0)
 
 [node name="RichTextLabel" parent="Dialogue" index="1"]
 offset_left = 571.0
@@ -43,10 +88,37 @@ script = ExtResource("6_0a0g6")
 [node name="Player" parent="." instance=ExtResource("3_gjynm")]
 position = Vector2(150, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_apq3o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("7_c1hlg")
+
+[node name="PhoneOverlay" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(964, 2000)
+scale = Vector2(1.33, 1.33)
+texture = ExtResource("8_dtsfq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PhoneOverlay"]
+libraries = {
+"": SubResource("AnimationLibrary_eyqp3")
+}
+
+[node name="Health" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+offset_left = -156.0
+offset_top = -293.0
+offset_right = 136.0
+offset_bottom = -176.0
+theme = ExtResource("9_vitdj")
+text = "Vitality: 100"
+
+[node name="Debt" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+offset_left = -151.0
+offset_top = -192.0
+offset_right = 129.0
+offset_bottom = 191.0
+theme = ExtResource("9_vitdj")
+text = "Debt: 9999999999"
 
 [node name="ApartmentIntro" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(960, 540)
@@ -55,6 +127,9 @@ script = ExtResource("8_t3wqm")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ApartmentIntro"]
 wait_time = 2.0
+
+[node name="Laugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_rl4gw")
 
 [connection signal="body_entered" from="Dialogue" to="Satin" method="_on_dialogue_body_entered"]
 

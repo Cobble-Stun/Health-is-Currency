@@ -1,9 +1,9 @@
+AudioStreamPlayer
+RichTextLabel
 CollisionShape2D
 Area2D
-RichTextLabel
 AnimationPlayer
 CanvasLayer
-AudioStreamPlayer
 Timer
 CollisionPolygon2D
 Polygon2D

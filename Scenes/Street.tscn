@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgcpq0kxhoy0e"]
+[gd_scene load_steps=14 format=3 uid="uid://caosqwpla8mi8"]
 
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="2_hmyee"]
 [ext_resource type="Texture2D" uid="uid://dortcsi5p7trm" path="res://Sprites/Backgrounds/Street.png" id="2_lo36n"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://0jnmi4ke1jw" path="res://Prefabs/enemy.tscn" id="5_s6yda"]
 [ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="6_gifji"]
 [ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="7_nj1fw"]
-[ext_resource type="Script" path="res://Scripts/Load Scene.gd" id="8_8orns"]
+[ext_resource type="PackedScene" uid="uid://bcqe7f35gvo" path="res://Prefabs/load_scene.tscn" id="8_1p8uk"]
+[ext_resource type="PackedScene" uid="uid://ciccxgwpgskmh" path="res://Prefabs/store.tscn" id="9_qo3wo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i1cv"]
 size = Vector2(164, 774)
@@ -50,8 +51,6 @@ _data = {
 "Bring Up": SubResource("Animation_c6fbn")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nihbe"]
-
 [node name="Street" type="Node2D"]
 
 [node name="Street" type="Sprite2D" parent="."]
@@ -66,6 +65,7 @@ autoplay = true
 position = Vector2(-600, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_hmyee")]
+position = Vector2(-2300, 0)
 
 [node name="Test" type="StaticBody2D" parent="."]
 position = Vector2(700, 0)
@@ -103,10 +103,9 @@ offset_bottom = 191.0
 theme = ExtResource("7_nj1fw")
 text = "Debt: 9999999999"
 
-[node name="LoadScene" type="Area2D" parent="."]
-script = ExtResource("8_8orns")
+[node name="LoadScene" parent="." instance=ExtResource("8_1p8uk")]
+position = Vector2(-2813, -19)
+scenePath = "res://Scenes/Apartment.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadScene"]
-shape = SubResource("RectangleShape2D_nihbe")
-
-[connection signal="body_entered" from="LoadScene" to="LoadScene" method="_on_body_entered"]
+[node name="Store" parent="." instance=ExtResource("9_qo3wo")]
+position = Vector2(-1129, 35)

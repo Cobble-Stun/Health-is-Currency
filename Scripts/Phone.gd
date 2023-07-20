@@ -11,22 +11,29 @@ func _ready():
 	healthText.visible = false
 	debtText.visible = false
 
-func _process(delta):
+func _process(_delta):
+	PhoneCheck()
+	SacrificeHealth()
+		
+func PhoneCheck():
 	if Input.is_action_just_pressed("Phone") and !phoneUp:
 		phoneUp = true
 		phoneOverlay.visible = true
 		healthText.visible = true
 		debtText.visible = true
-		healthText.text = str(globals.health)
-		debtText.text = str(globals.debt)
+		healthText.text = "Vitality: " + str(globals.health)
+		debtText.text = "Debt: " + str(globals.debt)
 		animPlayer.play("Bring Up")
 	elif Input.is_action_just_pressed("Phone") and phoneUp:
 		phoneUp = false
 		phoneOverlay.visible = true
 		healthText.visible = true
 		debtText.visible = true
-		healthText.text = str(globals.health)
-		debtText.text = str(globals.debt)
 		animPlayer.play("Bring Down")
-		
-		
+
+func SacrificeHealth():
+	if Input.is_action_just_pressed("Sacrifice") and phoneUp:
+		globals.health -= 25
+		globals.debt -= 1000000
+		healthText.text = "Vitality: " + str(globals.health)
+		debtText.text = "Debt: " + str(globals.debt)

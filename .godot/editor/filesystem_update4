@@ -4,5 +4,9 @@ res://Scenes/Apartment Intro.tscn
 res://Scenes/Apartment.tscn
 res://Prefabs/player.tscn
 res://Scripts/Load Scene.gd
-res://Scripts/Globals.gd
+res://Prefabs/load_scene.tscn
+res://Scripts/Enemy.gd
+res://Scenes/Store.gd
+res://Scripts/Intro/Satin.gd
 res://Scripts/Phone.gd
+res://Scripts/Store.gd
