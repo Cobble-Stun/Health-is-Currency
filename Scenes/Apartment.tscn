@@ -51,7 +51,7 @@ _data = {
 default_font_size = 30
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb38g"]
-size = Vector2(374.5, 353)
+size = Vector2(412, 388)
 
 [node name="Apartment" type="Node2D"]
 
@@ -117,6 +117,15 @@ theme = SubResource("Theme_opc4g")
 text = "Press E to sacrifice part of your soul. 
 - <3 Satan"
 
+[node name="Sleep" type="ColorRect" parent="Phone"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="GameOverUI" type="ColorRect" parent="Phone"]
 visible = false
 anchors_preset = 15
@@ -146,10 +155,20 @@ text = "Your entire soul is now mine bozo."
 script = ExtResource("8_7jfhm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SleepZone"]
-position = Vector2(469.75, 56.5)
+position = Vector2(451, 39)
 shape = SubResource("RectangleShape2D_yb38g")
 
 [node name="Timer" type="Timer" parent="SleepZone"]
+wait_time = 2.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SleepZone"]
+visible = false
+offset_left = 288.0
+offset_top = -237.0
+offset_right = 397.0
+offset_bottom = -152.0
+theme = ExtResource("7_vksse")
+text = "[E]"
 
 [connection signal="body_entered" from="SleepZone" to="SleepZone" method="_on_body_entered"]
 [connection signal="body_exited" from="SleepZone" to="SleepZone" method="_on_body_exited"]

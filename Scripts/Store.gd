@@ -1,9 +1,10 @@
 extends Area2D
 
 var inStore = false
-@onready var text = $Text
-@export var textMessage: String
+var buySound = preload("res://Sounds/Buy.ogg")
 
+@onready var text = $Text
+@onready var playerSound = get_parent().get_node("Player/AudioStreamPlayer")
 
 func _on_body_entered(body):
 	if body.name == "Player":

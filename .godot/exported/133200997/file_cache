@@ -1,0 +1,11 @@
+res://Application/UI.tres::8c8f7731ae8247f008d0f1b528a3bd74::1689993351::res://.godot/exported/133200997/export-bf5d6373bfdd33528d835cf1e19c25bc-UI.res
+res://Prefabs/dialogue.tscn::1d8e8644f0cd7491c57482b563f5ae9c::1689800464::res://.godot/exported/133200997/export-c2330209dca8c4f61eeb312f10338ee6-dialogue.scn
+res://Prefabs/enemy.tscn::7c464f1a059eaf1c7c1c7e1cf6b2e355::1690047758::res://.godot/exported/133200997/export-75513127553bd195bc133709f1d62ecd-enemy.scn
+res://Prefabs/load_scene.tscn::6b7155d79b9304a43b0f962be13aa9af::1690047758::res://.godot/exported/133200997/export-1a0ba5b07d58831dfbfe5e88c71f6ea0-load_scene.scn
+res://Prefabs/player.tscn::4e6820e0cd44e055da7c9c51e3a88b9c::1690047758::res://.godot/exported/133200997/export-10d6ba27c95124e9e2f66cb8ebb57635-player.scn
+res://Prefabs/store.tscn::95a917fc0d47e3dac527e612c0f0e7fe::1690047758::res://.godot/exported/133200997/export-4011f1a0d19a93dcc5b0f76440092d19-store.scn
+res://Scenes/Apartment Intro.tscn::ef35c211f159ab6ef70699cd23dc4c1e::1690047758::res://.godot/exported/133200997/export-0bcfb05eb7fd2459b1936920598fcab1-Apartment Intro.scn
+res://Scenes/Apartment.tscn::b992db9116b412cf2a22eff82f589a63::1690047758::res://.godot/exported/133200997/export-6dd5f71e983fad25cb3b97b4ecc06ef0-Apartment.scn
+res://Scenes/End.tscn::2e0a2982671c0b00e205b756f332d01c::1690047758::res://.godot/exported/133200997/export-a609a58946365ca5a53456b8e2e919be-End.scn
+res://Scenes/intro.tscn::efb679d7012f099f6675f25267650598::1690047758::res://.godot/exported/133200997/export-cb746c4d132407fc62e3e0c678ce7abe-intro.scn
+res://Scenes/Street.tscn::8fe4572b8c5a1b63957443af8e8b6ed5::1690047758::res://.godot/exported/133200997/export-54393f7fb0273fe14e35dbb572af6db0-Street.scn

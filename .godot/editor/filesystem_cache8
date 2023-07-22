@@ -1,39 +1,46 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690000208
+::res://::1690044400
 ::res://Application/::1690000201
 icon.svg::CompressedTexture2D::3924838118579037446::1689800464::1689800464::1::::<><>::
 Lexend-VariableFont_wght.ttf::FontFile::3401621097447359266::1689800464::1689800464::1::::<><>::
-UI.tres::Theme::7451419923229705499::1689993351::0::1::::<><>::uid://bop1g5c0hfa8i::::res://Application/Lexend-VariableFont_wght.ttf
+UI.tres::Theme::7451419923229705499::1689993351::0::1::::<><>::uid://bop1g5c0hfa8i
 ::res://Music/::1689998939
 Apartment Game Jam.ogg::AudioStreamOggVorbis::8828337438476239811::1689828158::1689998936::1::::<><>::
 Calm before the Storm.ogg::AudioStreamOggVorbis::1514671335296969631::1689800464::1689998939::1::::<><>::
-::res://Prefabs/::1690000172
+::res://Prefabs/::1690045057
 dialogue.tscn::PackedScene::1667901493021947258::1689800464::0::1::::<><>::res://Scripts/Show Text.gd<>uid://defr2d40hwy3d
-enemy.tscn::PackedScene::52179756076971536::1689999993::0::1::::<><>::res://Scripts/Enemy.gd<>uid://drttbblqq10i4::::res://Sprites/Game Jam Dead.png<>uid://cqrugh4s0mtfy::::res://Sprites/Player/Idle.png<>uid://um7iupkyx6j1::::res://Sprites/Player/MC walk1.png<>uid://dwifel4vjystf::::res://Sprites/Player/MC walk2.png<>uid://6hh8wi8hofk4::::res://Sprites/Player/MC walk3.png<>uid://g2kbao3r4064::::res://Sprites/Player/MC walk4.png<>uid://defr2d40hwy3d::::res://Application/UI.tres
-load_scene.tscn::PackedScene::2214644234994240::1689999993::0::1::::<><>::res://Scripts/Load Scene.gd
-player.tscn::PackedScene::392259175479702435::1689999993::0::1::::<><>::res://Scripts/Player.gd<>uid://cqrugh4s0mtfy::::res://Sprites/Player/Idle.png<>uid://um7iupkyx6j1::::res://Sprites/Player/MC walk1.png<>uid://dwifel4vjystf::::res://Sprites/Player/MC walk2.png<>uid://6hh8wi8hofk4::::res://Sprites/Player/MC walk3.png<>uid://g2kbao3r4064::::res://Sprites/Player/MC walk4.png
-store.tscn::PackedScene::5338643729059993111::1690000172::0::1::::<><>::res://Scripts/Store.gd<>uid://defr2d40hwy3d::::res://Application/UI.tres
-::res://Scenes/::1690000208
-Apartment Intro.tscn::PackedScene::6028666710019496746::1689999993::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://x07dgs512pd7::::res://Prefabs/dialogue.tscn<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://bwwiekpcvatvn::::res://Sprites/Satin.png<>res://Scripts/Intro/Satin.gd<>uid://dx1rosrj0qeyt::::res://Music/Apartment Game Jam.ogg<>uid://d0tvsnnxu25r4::::res://Sprites/Intro/Apartment Intro.png<>res://Scripts/Phone.gd<>uid://clot6sosggjmb::::res://Sprites/Game Jam Phone Overlay.png<>res://Scripts/Intro/ApartmentIntroSpriteFade.gd<>uid://defr2d40hwy3d::::res://Application/UI.tres<>uid://tjh73ek5b8y2::::res://Sounds/Satanic laugh.ogg
-Apartment.tscn::PackedScene::6994464217875538212::1689999993::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://dx1rosrj0qeyt::::res://Music/Apartment Game Jam.ogg<>uid://bcqe7f35gvo::::res://Prefabs/load_scene.tscn<>res://Scripts/Phone.gd<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://clot6sosggjmb::::res://Sprites/Game Jam Phone Overlay.png<>uid://defr2d40hwy3d::::res://Application/UI.tres<>res://Scripts/SleepZone.gd
-intro.tscn::PackedScene::8744049212689841386::1689999993::0::1::::<><>::res://Scripts/Intro/Cutscene.gd<>uid://yn0sduos4ma5::::res://Sprites/Intro/Panel 1.png<>uid://c8ivh7gqqo0kw::::res://Sprites/Intro/Panel 2.png<>uid://dytlex7jrgk7g::::res://Sprites/Intro/Panel 4.png<>uid://dfylvy65xiwv7::::res://Sprites/Intro/Panel 5.png<>uid://bvq11gaga6llt::::res://Sprites/Intro/Panel 3.png<>res://Scripts/Intro/Panel 3.gd<>uid://c7yivn1g4tqe0::::res://Sounds/Intro/Paper crinkle.ogg<>uid://b44ujuovfjyiw::::res://Sounds/Intro/Heart rate monitor.ogg<>uid://defr2d40hwy3d::::res://Application/UI.tres
-Street.tscn::PackedScene::4802865313702183945::1689999993::0::1::::<><>::uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://dortcsi5p7trm::::res://Sprites/Backgrounds/Street.png<>uid://vtyoeouaskg2::::res://Music/Calm before the Storm.ogg<>res://Scripts/Phone.gd<>uid://0jnmi4ke1jw::::res://Prefabs/enemy.tscn<>uid://clot6sosggjmb::::res://Sprites/Game Jam Phone Overlay.png<>uid://defr2d40hwy3d::::res://Application/UI.tres<>uid://bcqe7f35gvo::::res://Prefabs/load_scene.tscn<>uid://ciccxgwpgskmh::::res://Prefabs/store.tscn
-::res://Scripts/::1689999992
-Enemy.gd::GDScript::-1::1689994693::0::1::::<>CharacterBody2D<>::
+enemy.tscn::PackedScene::52179756076971536::1690045057::0::1::::<><>::res://Scripts/Enemy.gd<>uid://drttbblqq10i4::::res://Sprites/Game Jam Dead.png<>uid://cqrugh4s0mtfy::::res://Sprites/Player/Idle.png<>uid://um7iupkyx6j1::::res://Sprites/Player/MC walk1.png<>uid://dwifel4vjystf::::res://Sprites/Player/MC walk2.png<>uid://6hh8wi8hofk4::::res://Sprites/Player/MC walk3.png<>uid://g2kbao3r4064::::res://Sprites/Player/MC walk4.png<>uid://defr2d40hwy3d::::res://Application/UI.tres
+load_scene.tscn::PackedScene::2214644234994240::1690045057::0::1::::<><>::res://Scripts/Load Scene.gd
+player.tscn::PackedScene::392259175479702435::1690045057::0::1::::<><>::res://Scripts/Player.gd<>uid://cqrugh4s0mtfy::::res://Sprites/Player/Idle.png<>uid://um7iupkyx6j1::::res://Sprites/Player/MC walk1.png<>uid://dwifel4vjystf::::res://Sprites/Player/MC walk2.png<>uid://6hh8wi8hofk4::::res://Sprites/Player/MC walk3.png<>uid://g2kbao3r4064::::res://Sprites/Player/MC walk4.png
+Store3.gd::GDScript::-1::1690045054::0::1::::<>Area2D<>::
+store.tscn::PackedScene::5338643729059993111::1690045057::0::1::::<><>::res://Scripts/Store.gd<>uid://defr2d40hwy3d::::res://Application/UI.tres
+::res://Scenes/::1690045057
+Apartment Intro.tscn::PackedScene::6028666710019496746::1690045057::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://x07dgs512pd7::::res://Prefabs/dialogue.tscn<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://bwwiekpcvatvn::::res://Sprites/Satin.png<>res://Scripts/Intro/Satin.gd<>uid://dx1rosrj0qeyt::::res://Music/Apartment Game Jam.ogg<>uid://d0tvsnnxu25r4::::res://Sprites/Intro/Apartment Intro.png<>res://Scripts/Phone.gd<>uid://clot6sosggjmb::::res://Sprites/Game Jam Phone Overlay.png<>res://Scripts/Intro/ApartmentIntroSpriteFade.gd<>uid://defr2d40hwy3d::::res://Application/UI.tres<>uid://tjh73ek5b8y2::::res://Sounds/Satanic laugh.ogg
+Apartment.tscn::PackedScene::6994464217875538212::1690045057::0::1::::<><>::uid://43ddwdisde7j::::res://Sprites/Backgrounds/Game Jam Bedroom.png<>uid://dx1rosrj0qeyt::::res://Music/Apartment Game Jam.ogg<>uid://bcqe7f35gvo::::res://Prefabs/load_scene.tscn<>res://Scripts/Phone.gd<>uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://clot6sosggjmb::::res://Sprites/Game Jam Phone Overlay.png<>uid://defr2d40hwy3d::::res://Application/UI.tres<>res://Scripts/SleepZone.gd
+End.tscn::PackedScene::6847503408686538833::1690045057::0::1::::<><>::uid://defr2d40hwy3d::::res://Application/UI.tres<>res://Scripts/ExitGame.gd
+intro.tscn::PackedScene::8744049212689841386::1690045057::0::1::::<><>::res://Scripts/Intro/Cutscene.gd<>uid://yn0sduos4ma5::::res://Sprites/Intro/Panel 1.png<>uid://c8ivh7gqqo0kw::::res://Sprites/Intro/Panel 2.png<>uid://dytlex7jrgk7g::::res://Sprites/Intro/Panel 4.png<>uid://dfylvy65xiwv7::::res://Sprites/Intro/Panel 5.png<>uid://bvq11gaga6llt::::res://Sprites/Intro/Panel 3.png<>res://Scripts/Intro/Panel 3.gd<>uid://c7yivn1g4tqe0::::res://Sounds/Intro/Paper crinkle.ogg<>uid://b44ujuovfjyiw::::res://Sounds/Intro/Heart rate monitor.ogg<>uid://defr2d40hwy3d::::res://Application/UI.tres
+Store3Thing.gd::GDScript::-1::1690045164::0::1::::<>Node<>::
+Street.tscn::PackedScene::4802865313702183945::1690045164::0::1::::<><>::uid://fuaplykj6mmt::::res://Prefabs/player.tscn<>uid://carmgphtmub6v::::res://Sprites/Backgrounds/Street.png<>uid://vtyoeouaskg2::::res://Music/Calm before the Storm.ogg<>res://Scripts/Store1.gd<>res://Scripts/Store2.gd<>res://Scripts/EnemySpawner.gd<>res://Scripts/Phone.gd<>uid://0jnmi4ke1jw::::res://Prefabs/enemy.tscn<>res://Prefabs/Store3.gd<>res://Scenes/Store3Thing.gd<>uid://clot6sosggjmb::::res://Sprites/Game Jam Phone Overlay.png<>uid://defr2d40hwy3d::::res://Application/UI.tres<>uid://bcqe7f35gvo::::res://Prefabs/load_scene.tscn<>uid://ciccxgwpgskmh::::res://Prefabs/store.tscn
+::res://Scripts/::1690044400
+Enemy.gd::GDScript::-1::1690041732::0::1::::<>CharacterBody2D<>::
+EnemySpawner.gd::GDScript::-1::1690005462::0::1::::<>Node<>::
+ExitGame.gd::GDScript::-1::1690038838::0::1::::<>Button<>::
 Globals.gd::GDScript::-1::1689999450::0::1::::<>Node<>::
 Load Scene.gd::GDScript::-1::1689817496::0::1::::<>Area2D<>::
 Phone.gd::GDScript::-1::1689999220::0::1::::<>CanvasLayer<>::
-Player.gd::GDScript::-1::1689999992::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1690042673::0::1::::<>CharacterBody2D<>::
 Show Text.gd::GDScript::-1::1689800464::0::1::::<>Area2D<>::
-SleepZone.gd::GDScript::-1::1689998540::0::1::::<>Area2D<>::
-Store.gd::GDScript::-1::1689830296::0::1::::<>Area2D<>::
+SleepZone.gd::GDScript::-1::1690036898::0::1::::<>Area2D<>::
+Store1.gd::GDScript::-1::1690044191::0::1::::<>Area2D<>::
+Store2.gd::GDScript::-1::1690043123::0::1::::<>Area2D<>::
+Store.gd::GDScript::-1::1690040282::0::1::::<>Area2D<>::
 ::res://Scripts/Intro/::1689820627
 ApartmentIntroSpriteFade.gd::GDScript::-1::1689800464::0::1::::<>Sprite2D<>::
 Cutscene.gd::GDScript::-1::1689800464::0::1::::<>Sprite2D<>::
 Panel 3.gd::GDScript::-1::1689800464::0::1::::<>Sprite2D<>::
 Satin.gd::GDScript::-1::1689820627::0::1::::<>Sprite2D<>::
-::res://Sounds/::1689830251
-Buy.ogg::AudioStreamOggVorbis::3950559334252599639::1689830251::1689830251::1::::<><>::
+::res://Sounds/::1690044400
+Buy.ogg::AudioStreamOggVorbis::6887813224324339850::1690044393::1690044400::1::::<><>::
 Hit 1.wav::AudioStreamWAV::5878852623422121091::1689820950::1689820950::1::::<><>::
 Hit 2.wav::AudioStreamWAV::3941020985116499594::1689820941::1689820941::1::::<><>::
 Satanic laugh.ogg::AudioStreamOggVorbis::1352651070591019511::1689800464::1689800464::1::::<><>::

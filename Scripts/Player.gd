@@ -28,12 +28,16 @@ func _process(_delta):
 	elif Input.is_action_just_pressed("Right"):
 		playerSprite.flip_h = false
 		camera.drag_horizontal_offset = 1
+		
+	if globals.health > 100:
+		globals.health = 100
 	
 	move_and_slide()
 	DeathCheck()
+	WinCheck()
 		
 func DeathCheck():
-	if globals.health <= 0 and !dead or globals.debt >= 10000000000 and !dead:
+	if globals.health <= 0 and !dead or globals.debt >= 10000000000 and !dead or globals.dayNumber >= 4 and globals.debt > 0 and !dead:
 		Die()
 func Die():
 	playerSfx.stream = laugh
@@ -50,3 +54,9 @@ func Die():
 	globals.mysteryChems = 0
 	dead = true
 	get_tree().change_scene_to_file("res://Scenes/Apartment.tscn")
+
+func WinCheck():
+	if globals.debt <= 0:
+		get_tree().change_scene_to_file("res://Scenes/End.tscn")
+	
+		

@@ -1,13 +1,14 @@
 Node
 RichTextLabel
-Timer
+Button
 ColorRect
+CanvasLayer
+Timer
 CollisionShape2D
 Area2D
 AudioStreamPlayer
 ItemList
 AnimationPlayer
-CanvasLayer
 CollisionPolygon2D
 Polygon2D
 StaticBody2D

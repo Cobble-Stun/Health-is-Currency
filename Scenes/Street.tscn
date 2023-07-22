@@ -1,11 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://caosqwpla8mi8"]
+[gd_scene load_steps=20 format=3 uid="uid://caosqwpla8mi8"]
 
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="2_hmyee"]
 [ext_resource type="Texture2D" uid="uid://carmgphtmub6v" path="res://Sprites/Backgrounds/Street.png" id="2_lo36n"]
 [ext_resource type="AudioStream" uid="uid://vtyoeouaskg2" path="res://Music/Calm before the Storm.ogg" id="3_4v41p"]
+[ext_resource type="Script" path="res://Scripts/Store1.gd" id="3_fl8hh"]
+[ext_resource type="Script" path="res://Scripts/Store2.gd" id="4_6yiyn"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="4_e2g7t"]
 [ext_resource type="Script" path="res://Scripts/Phone.gd" id="5_eocq7"]
-[ext_resource type="Script" path="res://Scenes/EnemySpawner.gd" id="5_k5qli"]
 [ext_resource type="PackedScene" uid="uid://0jnmi4ke1jw" path="res://Prefabs/enemy.tscn" id="5_s6yda"]
+[ext_resource type="Script" path="res://Prefabs/Store3.gd" id="5_tr7ef"]
+[ext_resource type="Script" path="res://Scripts/Store3Thing.gd" id="5_yup1i"]
 [ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="6_gifji"]
 [ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="7_nj1fw"]
 [ext_resource type="PackedScene" uid="uid://bcqe7f35gvo" path="res://Prefabs/load_scene.tscn" id="8_1p8uk"]
@@ -63,6 +67,7 @@ texture = ExtResource("2_lo36n")
 
 [node name="Store" parent="." instance=ExtResource("9_qo3wo")]
 position = Vector2(-1129, 35)
+script = ExtResource("3_fl8hh")
 
 [node name="Text" parent="Store" index="1"]
 visible = false
@@ -72,58 +77,92 @@ offset_right = 587.0
 offset_bottom = -65.0
 
 [node name="ItemList" parent="Store/Text" index="1"]
-layout_mode = 0
 offset_left = 6.0
 offset_top = 124.0
 offset_right = 733.0
 offset_bottom = 382.0
 item_count = 2
-item_0/text = "Chemicals ($20)"
-item_1/text = "Candy ($2)"
+item_0/text = "Chemicals (200k)"
+item_1/text = "Candy (20k)"
 
 [node name="Item descriptions" parent="Store/Text" index="2"]
-offset_left = 297.0
-offset_top = 130.0
-offset_right = 1041.0
-offset_bottom = 334.0
+offset_left = 319.0
+offset_top = 134.0
+offset_right = 1063.0
+offset_bottom = 338.0
 text = "		 3 cook meth
 heal 1	"
 
 [node name="Store2" parent="." instance=ExtResource("9_qo3wo")]
 position = Vector2(-1986, 44)
+script = ExtResource("4_6yiyn")
 
 [node name="Text" parent="Store2" index="1"]
 visible = false
 offset_left = -340.0
 offset_top = -483.0
-offset_right = 263.0
+offset_right = 291.0
 offset_bottom = -41.0
 
 [node name="ItemList" parent="Store2/Text" index="1"]
-layout_mode = 0
 offset_left = 6.0
 offset_top = 130.0
-offset_right = 547.0
+offset_right = 626.0
 offset_bottom = 388.0
 item_count = 3
-item_0/text = "Noodles ($15)"
-item_1/text = "Dumplings ($10)"
-item_2/text = "Sticky rice ($5)"
+item_0/text = "Noodles (150k)"
+item_1/text = "Dumplings (100k)"
+item_2/text = "Sticky rice (50k)"
 
 [node name="Item descriptions" parent="Store2/Text" index="2"]
-offset_left = 371.0
-offset_top = 136.0
-offset_bottom = 342.0
+offset_left = 400.0
+offset_top = 141.0
+offset_right = 661.0
+offset_bottom = 347.0
 text = "heal 5
      heal 3
  heal 2"
+
+[node name="Store3Thing" type="Node" parent="."]
+script = ExtResource("5_yup1i")
+
+[node name="Store3" parent="." instance=ExtResource("9_qo3wo")]
+position = Vector2(1038, -37)
+script = ExtResource("5_tr7ef")
+
+[node name="CollisionShape2D" parent="Store3" index="0"]
+position = Vector2(11.75, -13)
+
+[node name="Text" parent="Store3" index="1"]
+visible = false
+offset_left = -208.0
+offset_top = -598.0
+offset_right = 311.0
+offset_bottom = -156.0
+text = "Got chemicals? 
+(1 million for 3)"
+
+[node name="ItemList" parent="Store3/Text" index="1"]
+offset_left = 4.0
+offset_top = 130.0
+offset_right = 383.0
+offset_bottom = 216.0
+item_count = 1
+item_0/text = "Sell Chemicals"
+
+[node name="Item descriptions" parent="Store3/Text" index="2"]
+offset_left = 11.0
+offset_top = 213.0
+offset_right = 348.0
+offset_bottom = 291.0
+text = "You have x"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4v41p")
 autoplay = true
 
-[node name="Node" type="Node" parent="."]
-script = ExtResource("5_k5qli")
+[node name="Enemy Spawner" type="Node" parent="."]
+script = ExtResource("4_e2g7t")
 enemyInstance = ExtResource("5_s6yda")
 
 [node name="Player" parent="." instance=ExtResource("2_hmyee")]
@@ -172,7 +211,7 @@ offset_top = -192.0
 offset_right = 144.0
 offset_bottom = 191.0
 theme = ExtResource("7_nj1fw")
-text = "Debt: 9999999999"
+text = "Debt: 99999999"
 
 [node name="Message" type="RichTextLabel" parent="Phone/PhoneOverlay"]
 offset_left = -146.617
@@ -212,5 +251,11 @@ text = "Your entire soul is now mine bozo."
 position = Vector2(-2813, -19)
 scenePath = "res://Scenes/Apartment.tscn"
 
+[connection signal="item_clicked" from="Store/Text/ItemList" to="Store" method="_on_item_list_item_clicked"]
+[connection signal="item_clicked" from="Store2/Text/ItemList" to="Store2" method="_on_item_list_item_clicked"]
+[connection signal="body_entered" from="Store3" to="Store3Thing" method="_on_store_3_body_entered"]
+[connection signal="item_clicked" from="Store3/Text/ItemList" to="Store3" method="_on_item_list_item_clicked"]
+
 [editable path="Store"]
 [editable path="Store2"]
+[editable path="Store3"]

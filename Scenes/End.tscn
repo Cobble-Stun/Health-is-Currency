@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4s8m7dmg8kab"]
+
+[ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="1_ko5ka"]
+[ext_resource type="Script" path="res://Scripts/ExitGame.gd" id="2_lh1yo"]
+
+[node name="End" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 444.0
+offset_top = 300.0
+offset_right = 1524.0
+offset_bottom = 710.0
+theme = ExtResource("1_ko5ka")
+text = "Thanks for Playing! I'm sorry this game wasn't as good as I wanted it to be."
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 858.0
+offset_top = 676.0
+offset_right = 968.0
+offset_bottom = 747.0
+theme = ExtResource("1_ko5ka")
+text = "Quit"
+script = ExtResource("2_lh1yo")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

@@ -10,7 +10,7 @@
 [ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="8_d5ebf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8g0o"]
-size = Vector2(144, 518)
+size = Vector2(163, 518)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ijkp"]
 animations = [{
@@ -53,12 +53,12 @@ size = Vector2(274, 518)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_g8ymc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 6)
+position = Vector2(-9.5, 0)
 shape = SubResource("RectangleShape2D_u8g0o")
-disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5ijkp")

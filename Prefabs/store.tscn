@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="2_iqhh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpbg6"]
-size = Vector2(207, 472)
+size = Vector2(239.5, 472)
 
 [node name="Store" type="Area2D"]
 script = ExtResource("1_lq6ja")
@@ -21,6 +21,7 @@ theme = ExtResource("2_iqhh2")
 text = "Click to buy"
 
 [node name="ItemList" type="ItemList" parent="Text"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 106.0
 offset_right = 745.0
