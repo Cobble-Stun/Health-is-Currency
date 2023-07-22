@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://caosqwpla8mi8"]
+[gd_scene load_steps=16 format=3 uid="uid://caosqwpla8mi8"]
 
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="2_hmyee"]
-[ext_resource type="Texture2D" uid="uid://dortcsi5p7trm" path="res://Sprites/Backgrounds/Street.png" id="2_lo36n"]
+[ext_resource type="Texture2D" uid="uid://carmgphtmub6v" path="res://Sprites/Backgrounds/Street.png" id="2_lo36n"]
 [ext_resource type="AudioStream" uid="uid://vtyoeouaskg2" path="res://Music/Calm before the Storm.ogg" id="3_4v41p"]
 [ext_resource type="Script" path="res://Scripts/Phone.gd" id="5_eocq7"]
+[ext_resource type="Script" path="res://Scenes/EnemySpawner.gd" id="5_k5qli"]
 [ext_resource type="PackedScene" uid="uid://0jnmi4ke1jw" path="res://Prefabs/enemy.tscn" id="5_s6yda"]
 [ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="6_gifji"]
 [ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="7_nj1fw"]
@@ -51,18 +52,79 @@ _data = {
 "Bring Up": SubResource("Animation_c6fbn")
 }
 
+[sub_resource type="Theme" id="Theme_wuuwf"]
+default_font_size = 30
+
 [node name="Street" type="Node2D"]
 
 [node name="Street" type="Sprite2D" parent="."]
 position = Vector2(0, -200)
 texture = ExtResource("2_lo36n")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Store" parent="." instance=ExtResource("9_qo3wo")]
+position = Vector2(-1129, 35)
+
+[node name="Text" parent="Store" index="1"]
+visible = false
+offset_left = -272.0
+offset_top = -507.0
+offset_right = 587.0
+offset_bottom = -65.0
+
+[node name="ItemList" parent="Store/Text" index="1"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 124.0
+offset_right = 733.0
+offset_bottom = 382.0
+item_count = 2
+item_0/text = "Chemicals ($20)"
+item_1/text = "Candy ($2)"
+
+[node name="Item descriptions" parent="Store/Text" index="2"]
+offset_left = 297.0
+offset_top = 130.0
+offset_right = 1041.0
+offset_bottom = 334.0
+text = "		 3 cook meth
+heal 1	"
+
+[node name="Store2" parent="." instance=ExtResource("9_qo3wo")]
+position = Vector2(-1986, 44)
+
+[node name="Text" parent="Store2" index="1"]
+visible = false
+offset_left = -340.0
+offset_top = -483.0
+offset_right = 263.0
+offset_bottom = -41.0
+
+[node name="ItemList" parent="Store2/Text" index="1"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 130.0
+offset_right = 547.0
+offset_bottom = 388.0
+item_count = 3
+item_0/text = "Noodles ($15)"
+item_1/text = "Dumplings ($10)"
+item_2/text = "Sticky rice ($5)"
+
+[node name="Item descriptions" parent="Store2/Text" index="2"]
+offset_left = 371.0
+offset_top = 136.0
+offset_bottom = 342.0
+text = "heal 5
+     heal 3
+ heal 2"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4v41p")
 autoplay = true
 
-[node name="Enemy" parent="." instance=ExtResource("5_s6yda")]
-position = Vector2(-600, 0)
+[node name="Node" type="Node" parent="."]
+script = ExtResource("5_k5qli")
+enemyInstance = ExtResource("5_s6yda")
 
 [node name="Player" parent="." instance=ExtResource("2_hmyee")]
 position = Vector2(-2300, 0)
@@ -72,22 +134,31 @@ position = Vector2(700, 0)
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test"]
+position = Vector2(2176, -48)
 shape = SubResource("RectangleShape2D_1i1cv")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Test2" type="StaticBody2D" parent="."]
+position = Vector2(700, 0)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test2"]
+position = Vector2(-3618, -108)
+shape = SubResource("RectangleShape2D_1i1cv")
+
+[node name="Phone" type="CanvasLayer" parent="."]
 script = ExtResource("5_eocq7")
 
-[node name="PhoneOverlay" type="Sprite2D" parent="CanvasLayer"]
+[node name="PhoneOverlay" type="Sprite2D" parent="Phone"]
 position = Vector2(964, 2000)
 scale = Vector2(1.33, 1.33)
 texture = ExtResource("6_gifji")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PhoneOverlay"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Phone/PhoneOverlay"]
 libraries = {
 "": SubResource("AnimationLibrary_eyqp3")
 }
 
-[node name="Health" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+[node name="Health" type="RichTextLabel" parent="Phone/PhoneOverlay"]
 offset_left = -156.0
 offset_top = -293.0
 offset_right = 136.0
@@ -95,17 +166,51 @@ offset_bottom = -176.0
 theme = ExtResource("7_nj1fw")
 text = "Vitality: 100"
 
-[node name="Debt" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+[node name="Debt" type="RichTextLabel" parent="Phone/PhoneOverlay"]
 offset_left = -151.0
 offset_top = -192.0
-offset_right = 129.0
+offset_right = 144.0
 offset_bottom = 191.0
 theme = ExtResource("7_nj1fw")
 text = "Debt: 9999999999"
+
+[node name="Message" type="RichTextLabel" parent="Phone/PhoneOverlay"]
+offset_left = -146.617
+offset_top = -20.3008
+offset_right = 156.383
+offset_bottom = 238.699
+theme = SubResource("Theme_wuuwf")
+text = "Press E to sacrifice part of your soul. 
+- <3 Satan"
+
+[node name="GameOverUI" type="ColorRect" parent="Phone"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/GameOverUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -60.0
+offset_right = 228.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_nj1fw")
+text = "Your entire soul is now mine bozo."
 
 [node name="LoadScene" parent="." instance=ExtResource("8_1p8uk")]
 position = Vector2(-2813, -19)
 scenePath = "res://Scenes/Apartment.tscn"
 
-[node name="Store" parent="." instance=ExtResource("9_qo3wo")]
-position = Vector2(-1129, 35)
+[editable path="Store"]
+[editable path="Store2"]

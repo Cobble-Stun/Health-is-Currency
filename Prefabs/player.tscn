@@ -39,6 +39,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_hqqdr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,3 +55,8 @@ sprite_frames = SubResource("SpriteFrames_wbibl")
 animation = &"Run"
 frame = 3
 frame_progress = 0.999429
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5

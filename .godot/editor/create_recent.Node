@@ -1,10 +1,13 @@
-AudioStreamPlayer
+Node
 RichTextLabel
+Timer
+ColorRect
 CollisionShape2D
 Area2D
+AudioStreamPlayer
+ItemList
 AnimationPlayer
 CanvasLayer
-Timer
 CollisionPolygon2D
 Polygon2D
 StaticBody2D

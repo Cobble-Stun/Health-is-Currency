@@ -18,7 +18,22 @@ offset_top = -575.0
 offset_right = 257.0
 offset_bottom = -133.0
 theme = ExtResource("2_iqhh2")
-text = "Text"
+text = "Click to buy"
+
+[node name="ItemList" type="ItemList" parent="Text"]
+offset_left = 16.0
+offset_top = 106.0
+offset_right = 745.0
+offset_bottom = 364.0
+theme = ExtResource("2_iqhh2")
+
+[node name="Item descriptions" type="RichTextLabel" parent="Text"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 103.0
+offset_right = 632.0
+offset_bottom = 307.0
+theme = ExtResource("2_iqhh2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

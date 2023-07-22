@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://0jnmi4ke1jw"]
+[gd_scene load_steps=12 format=3 uid="uid://0jnmi4ke1jw"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_g8ymc"]
+[ext_resource type="Texture2D" uid="uid://drttbblqq10i4" path="res://Sprites/Game Jam Dead.png" id="2_1r3wv"]
 [ext_resource type="Texture2D" uid="uid://cqrugh4s0mtfy" path="res://Sprites/Player/Idle.png" id="2_s2a1c"]
+[ext_resource type="Texture2D" uid="uid://um7iupkyx6j1" path="res://Sprites/Player/MC walk1.png" id="4_3d6kx"]
+[ext_resource type="Texture2D" uid="uid://dwifel4vjystf" path="res://Sprites/Player/MC walk2.png" id="5_1uqyl"]
+[ext_resource type="Texture2D" uid="uid://6hh8wi8hofk4" path="res://Sprites/Player/MC walk3.png" id="6_go40s"]
+[ext_resource type="Texture2D" uid="uid://g2kbao3r4064" path="res://Sprites/Player/MC walk4.png" id="7_of4he"]
+[ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="8_d5ebf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8g0o"]
 size = Vector2(144, 518)
@@ -10,12 +16,40 @@ size = Vector2(144, 518)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_1r3wv")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_s2a1c")
 }],
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3d6kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1uqyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_go40s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_of4he")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eeycp"]
+size = Vector2(274, 518)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -28,7 +62,27 @@ disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5ijkp")
-animation = &"Idle"
+animation = &"Walking"
+frame = 2
+frame_progress = 0.0233641
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Sacrifice Text" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -43.0
+offset_top = -328.0
+offset_right = 37.0
+offset_bottom = -243.0
+theme = ExtResource("8_d5ebf")
+text = "[E]"
+
+[node name="CheckPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPlayer"]
+position = Vector2(-14, 6)
+shape = SubResource("RectangleShape2D_eeycp")
+
+[connection signal="body_entered" from="CheckPlayer" to="." method="_on_check_player_body_entered"]
+[connection signal="body_exited" from="CheckPlayer" to="." method="_on_check_player_body_exited"]

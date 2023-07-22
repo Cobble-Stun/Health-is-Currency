@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dx1rosrj0qeyt"
+path="res://.godot/imported/Apartment Game Jam.ogg-d48da0be03f741df451303c55bd2116e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Apartment Game Jam.ogg"
+dest_files=["res://.godot/imported/Apartment Game Jam.ogg-d48da0be03f741df451303c55bd2116e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

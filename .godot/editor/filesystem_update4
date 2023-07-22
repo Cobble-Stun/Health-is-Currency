@@ -1,12 +1,15 @@
+res://Prefabs/enemy.tscn
+res://Scripts/Enemy.gd
 res://Scenes/Street.tscn
 res://Scenes/intro.tscn
 res://Scenes/Apartment Intro.tscn
 res://Scenes/Apartment.tscn
 res://Prefabs/player.tscn
-res://Scripts/Load Scene.gd
 res://Prefabs/load_scene.tscn
-res://Scripts/Enemy.gd
-res://Scenes/Store.gd
-res://Scripts/Intro/Satin.gd
+res://Prefabs/store.tscn
+res://Application/UI.tres
+res://Scripts/Globals.gd
+res://Scripts/SleepZone.gd
 res://Scripts/Phone.gd
-res://Scripts/Store.gd
+res://Scripts/Player.gd
+res://Scenes/EnemySpawner.gd

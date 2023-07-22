@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 var phoneUp = false
+var sacrificeSound = preload("res://Sounds/Soul Sacrifice.wav")
+
+@onready var soundPlayer = get_parent().get_node("Player/AudioStreamPlayer")
 @onready var phoneOverlay = $PhoneOverlay
 @onready var animPlayer = $PhoneOverlay/AnimationPlayer
 @onready var healthText = $PhoneOverlay/Health
@@ -33,7 +36,9 @@ func PhoneCheck():
 
 func SacrificeHealth():
 	if Input.is_action_just_pressed("Sacrifice") and phoneUp:
+		soundPlayer.stream = sacrificeSound
+		soundPlayer.play()
 		globals.health -= 25
-		globals.debt -= 1000000
+		globals.debt -= 2000000
 		healthText.text = "Vitality: " + str(globals.health)
 		debtText.text = "Debt: " + str(globals.debt)

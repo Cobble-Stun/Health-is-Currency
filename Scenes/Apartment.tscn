@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6wf2lffkiu17"]
+[gd_scene load_steps=14 format=3 uid="uid://c6wf2lffkiu17"]
 
 [ext_resource type="Texture2D" uid="uid://43ddwdisde7j" path="res://Sprites/Backgrounds/Game Jam Bedroom.png" id="1_1mww1"]
+[ext_resource type="AudioStream" uid="uid://dx1rosrj0qeyt" path="res://Music/Apartment Game Jam.ogg" id="3_oodtb"]
 [ext_resource type="PackedScene" uid="uid://bcqe7f35gvo" path="res://Prefabs/load_scene.tscn" id="4_vy3gj"]
 [ext_resource type="Script" path="res://Scripts/Phone.gd" id="5_1iocs"]
 [ext_resource type="PackedScene" uid="uid://fuaplykj6mmt" path="res://Prefabs/player.tscn" id="5_hjnt5"]
 [ext_resource type="Texture2D" uid="uid://clot6sosggjmb" path="res://Sprites/Game Jam Phone Overlay.png" id="6_5lwtl"]
-[ext_resource type="AudioStream" uid="uid://vtyoeouaskg2" path="res://Music/Calm before the Storm.ogg" id="6_uywhw"]
 [ext_resource type="Theme" uid="uid://defr2d40hwy3d" path="res://Application/UI.tres" id="7_vksse"]
+[ext_resource type="Script" path="res://Scripts/SleepZone.gd" id="8_7jfhm"]
 
 [sub_resource type="Animation" id="Animation_s0yxl"]
 resource_name = "Bring Down"
@@ -46,6 +47,12 @@ _data = {
 "Bring Up": SubResource("Animation_c6fbn")
 }
 
+[sub_resource type="Theme" id="Theme_opc4g"]
+default_font_size = 30
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb38g"]
+size = Vector2(374.5, 353)
+
 [node name="Apartment" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -53,38 +60,39 @@ position = Vector2(0, 100)
 scale = Vector2(0.75, 0.75)
 collision_layer = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(450, 344, 450, -67, 877, -64, 877, -810, 1259, -822, 1214, 652, -1278, 627, -1247, -703, -908, -677, -919, 301)
-
 [node name="GameJamBedroom" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(0, -333.333)
 scale = Vector2(1.33333, 1.33333)
 texture = ExtResource("1_1mww1")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(450, 344, 450, -67, 877, -64, 877, -810, 1259, -822, 1214, 652, -1278, 627, -1247, -703, -908, -677, -919, 301)
+
 [node name="Player" parent="." instance=ExtResource("5_hjnt5")]
 position = Vector2(150, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_uywhw")
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oodtb")
+autoplay = true
 
 [node name="LoadScene" parent="." instance=ExtResource("4_vy3gj")]
 position = Vector2(-684, -43)
 scenePath = "res://Scenes/Street.tscn"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Phone" type="CanvasLayer" parent="."]
 script = ExtResource("5_1iocs")
 
-[node name="PhoneOverlay" type="Sprite2D" parent="CanvasLayer"]
+[node name="PhoneOverlay" type="Sprite2D" parent="Phone"]
 position = Vector2(964, 2000)
 scale = Vector2(1.33, 1.33)
 texture = ExtResource("6_5lwtl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PhoneOverlay"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Phone/PhoneOverlay"]
 libraries = {
 "": SubResource("AnimationLibrary_eyqp3")
 }
 
-[node name="Health" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+[node name="Health" type="RichTextLabel" parent="Phone/PhoneOverlay"]
 offset_left = -156.0
 offset_top = -293.0
 offset_right = 136.0
@@ -92,10 +100,56 @@ offset_bottom = -176.0
 theme = ExtResource("7_vksse")
 text = "Vitality: 100"
 
-[node name="Debt" type="RichTextLabel" parent="CanvasLayer/PhoneOverlay"]
+[node name="Debt" type="RichTextLabel" parent="Phone/PhoneOverlay"]
 offset_left = -151.0
 offset_top = -192.0
-offset_right = 129.0
+offset_right = 144.0
 offset_bottom = 191.0
 theme = ExtResource("7_vksse")
 text = "Debt: 9999999999"
+
+[node name="Message" type="RichTextLabel" parent="Phone/PhoneOverlay"]
+offset_left = -146.617
+offset_top = -20.3008
+offset_right = 156.383
+offset_bottom = 238.699
+theme = SubResource("Theme_opc4g")
+text = "Press E to sacrifice part of your soul. 
+- <3 Satan"
+
+[node name="GameOverUI" type="ColorRect" parent="Phone"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Phone/GameOverUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -60.0
+offset_right = 228.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_vksse")
+text = "Your entire soul is now mine bozo."
+
+[node name="SleepZone" type="Area2D" parent="."]
+script = ExtResource("8_7jfhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SleepZone"]
+position = Vector2(469.75, 56.5)
+shape = SubResource("RectangleShape2D_yb38g")
+
+[node name="Timer" type="Timer" parent="SleepZone"]
+
+[connection signal="body_entered" from="SleepZone" to="SleepZone" method="_on_body_entered"]
+[connection signal="body_exited" from="SleepZone" to="SleepZone" method="_on_body_exited"]
